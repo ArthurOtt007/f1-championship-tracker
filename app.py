@@ -1,6 +1,8 @@
 import streamlit as st
 from winning_wdc import get_drivers_standings
 import fastf1
+from fastf1.cache import Cache
+
 
 # Activer le cache FastF1 pour Streamlit
 fastf1.Cache.enable_cache('/tmp/fastf1_cache')
@@ -15,3 +17,4 @@ if st.button("Check Standings"):
         results = get_drivers_standings(year, round_number)
     st.success("Done! ✅")
     st.write(results)
+
